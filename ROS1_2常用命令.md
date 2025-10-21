@@ -434,6 +434,18 @@ ros2 interface package <package_name>  # 查看某个功能包中的接口定义
     ros2 launch <package_name> <launch_file_name>
     ros2 launch <package_name> <launch_file_name> param:=value # 设置传递给启动文件的参数
     ```
+补充:  
+- [ROS中的launch启动文件](https://caodong-street.github.io/2021/10/18/ros-zhong-de-launch-qi-dong-wen-jian/)
+
+  - output=”screen”：将节点的标准输出/错误打印到终端屏幕(调试阶段，实时查看节点输出信息)，默认输出为日志文档。  
+      - 标准输出 (stdout)：一般是 ROS_INFO, **printf**, **cout** 等；  
+      - 标准错误 (stderr)：一般是 ROS_WARN, ROS_ERROR, ROS_FATAL, cerr 等。  
+  
+  - respawn=”true”：复位属性，该节点停止时，会自动重启，默认为false。  
+  - required=”true”：必要节点，当该节点终止时，launch文件中的其他节点也被终止。  
+  - ns=”namespace”：命名空间，为节点内的相对名称添加命名空间前缀。  
+  - args=”arguments”：节点需要的输入参数，类似于launch文件内部的局部变量，仅限于launch文件使用，便于launch文件的重构，与ROS节点内部的实现没有关系。  
+  - param: parameter是ROS系统运行中的参数，存储在参数服务器中。
 
 ## 其他
 
