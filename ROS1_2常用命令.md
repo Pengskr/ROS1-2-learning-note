@@ -170,6 +170,8 @@ sudo rm -rf install/ build/ log/   # 清除工作空间中的编译历史
     rosrun <package_name> <executable_name>
 
     rosnode list
+    
+    rosnode info <node_name>  # 查看节点信息（topic,service)
     ```
 
 - ROS2
@@ -189,6 +191,10 @@ sudo rm -rf install/ build/ log/   # 清除工作空间中的编译历史
 
     ```bash
     rostopic list
+
+    rosnode info <topic_name>  # 查看节点信息（topic,service)
+
+    rostopic type <topic_name>  # 查看话题消息的类型
 
     rostopic pub <topic_name> <msg_type> '<args>'    # 发布话题
     ```
@@ -216,6 +222,8 @@ sudo rm -rf install/ build/ log/   # 清除工作空间中的编译历史
 - ROS1
 
     ```bash
+    rosnode info <service_name>  # 查看服务信息（topic,service)
+
     rosservice call <service_name>  # 调用服务
     ```
 
